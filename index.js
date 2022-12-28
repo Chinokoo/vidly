@@ -1,4 +1,4 @@
-//loadig the modules here.
+//loading the modules here.
 require('express-async-errors');
 const winston = require('winston');
 require('winston-mongodb');
@@ -24,12 +24,7 @@ process.on('unhandledRejection', (ex) => {
 process.on('uncaughtException', (ex) => {
     throw ex;
 });
-//winston.handleExceptions(new winston.transports.File, { filename: 'uncaughtExceptions.log' });
-//new winston.transports.Console({ colorize: true, prettyPrint: true });
-/*winston.add(winston.transports.MongoDB, {
-    db: 'mongodb://127.0.0.1:27017/Vidly',
-    level: 'info'
-});*/
+
 // SETTING THE CONFIGURATIONS.........
 if (!config.get('jwtPrivateKey')) {
     console.error('FATAL ERROR: jwt not defined!');
